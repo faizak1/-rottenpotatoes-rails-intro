@@ -8,9 +8,9 @@ class Movie < ActiveRecord::Base
     # if ratings_list is nil, retrieve ALL movies
     sorted_ratings_list = nil
     if ratings_list!=nil
-      sorted_ratings_list = @movies.where(rating: ratings_list)
+      sorted_ratings_list = Movie.where(rating: ratings_list)
     else
-      sorted_ratings_list = @movies.all
+      sorted_ratings_list = Movie.all
     end
     sorted_ratings_list
   end
